@@ -15,7 +15,6 @@ ul {
 #body-container {
     box-sizing: border-box;
     min-height: 100vh;
-    padding: 1rem;
     flex: 1;
     flex-direction: column;
     justify-content: flex-start;
