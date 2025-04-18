@@ -21,6 +21,14 @@ ul {
     align-items: stretch;
 }
 
+/* layout part */
+
+#header {
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Modules part */
 
 @font-face {
