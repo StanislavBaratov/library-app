@@ -20,3 +20,15 @@ ul {
     justify-content: flex-start;
     align-items: stretch;
 }
+
+/* Modules part */
+
+@font-face {
+    font-family: quillstone;
+    src: url(fonts/quillstone-free.regular.otf);
+}
+
+.logo {
+    font-family: quillstone, Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
