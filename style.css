@@ -40,3 +40,11 @@ ul {
     font-family: quillstone, Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
 }
+
+.menu-burger {
+    background-image: url(images/menu.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 30px;
+    height: 30px;
+}
