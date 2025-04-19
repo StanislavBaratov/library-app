@@ -35,6 +35,20 @@ a {
     position: relative;
 }
 
+#hero {
+    padding: 1rem;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+#hero > div {
+    justify-content: center;
+    align-items: center;
+}
+
 /* Modules part */
 
 @font-face {
@@ -89,4 +103,12 @@ a {
 .hidden {
     visibility: hidden;
     opacity: 0;
+}
+
+.xxl-text {
+    font-size: 3rem;
+}
+
+.m-text {
+    font-size: 1rem;
 }
