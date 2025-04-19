@@ -27,6 +27,8 @@ ul {
     padding: 1rem;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    position: relative;
 }
 
 /* Modules part */
@@ -49,4 +51,38 @@ ul {
     width: 30px;
     height: 30px;
     border: 0;
+}
+
+.navigation {
+    flex: 0 1 500px;
+}
+
+.navigation-dropdown {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.navigation-links {
+    flex: 0 1 500px;
+}
+
+/* States part */
+
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }
