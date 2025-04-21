@@ -49,6 +49,16 @@ a {
     align-items: center;
 }
 
+#main {
+    padding: 1rem;
+    flex: 1;
+}
+
+#footer {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
 /* Modules part */
 
 @font-face {
