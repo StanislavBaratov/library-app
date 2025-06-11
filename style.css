@@ -5,6 +5,11 @@
 
 @import url(logo/logo.css);
 
+@import url(hero/hero.css);
+@import url(hero/__slogan/hero__slogan.css);
+@import url(hero/__prompt/hero__prompt.css);
+@import url(hero/__buttons/hero__buttons.css);
+
 @import url(main/main.css);
 
 @import url(footer/footer.css);
