@@ -15,4 +15,6 @@
 
 @import url(main/main.css);
 
+@import url(card-canvas/card-canvas.css);
+
 @import url(footer/footer.css);
