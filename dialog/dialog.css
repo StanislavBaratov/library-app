@@ -1,0 +1,7 @@
+.dialog {
+    flex: 1;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+}
