@@ -18,5 +18,8 @@
 @import url(card-canvas/card-canvas.css);
 
 @import url(card/card.css);
+@import url(card/__text-field-control/card__text-field-control.css);
+@import url(card/__field-title/card__field-title.css);
+@import url(card/__field-value/card__field-value.css);
 
 @import url(footer/footer.css);
