@@ -8,11 +8,8 @@ export class Card {
         'isRead': 'Read',
     };
 
-    constructor(title, author, genre, isRead) {
-        this.title = title;
-        this.author = author;
-        this.genre = genre;
-        this.isRead = isRead;
+    constructor(book) {
+        this.book = book;
         this.control = null;
         this.createControl();
     }
@@ -21,10 +18,10 @@ export class Card {
         this.control = document.createElement('div');
         this.control.classList.add('card');
 
-        Object.keys(this).forEach(key => {
-            if (Object.hasOwn(this, key) && typeof this[key] !== 'function' && key !== 'control') {
+        Object.keys(this.book).forEach(key => {
+            if (Object.hasOwn(this.book, key)) {
                 
-                const textFieldControl = new CardTextFieldControl(Card.mapping[key], this[key]);
+                const textFieldControl = new CardTextFieldControl(Card.mapping[key], this.book[key]);
                 this.control.appendChild(textFieldControl.control);
             }
         });
