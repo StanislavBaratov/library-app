@@ -1,0 +1,7 @@
+.hero__button_color_green {
+    background-color: green;
+}
+
+.hero__button_color_green:hover {
+    background-color: rgb(0, 180, 0);
+}

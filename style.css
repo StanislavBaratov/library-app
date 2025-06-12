@@ -9,6 +9,9 @@
 @import url(hero/__slogan/hero__slogan.css);
 @import url(hero/__prompt/hero__prompt.css);
 @import url(hero/__buttons/hero__buttons.css);
+@import url(hero/__button/hero__button.css);
+@import url(hero/__button/_color_blue/hero__button_color_blue.css);
+@import url(hero/__button/_color_green/hero__button_color_green.css);
 
 @import url(main/main.css);
 
