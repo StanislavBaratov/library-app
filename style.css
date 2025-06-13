@@ -25,3 +25,10 @@
 @import url(footer/footer.css);
 
 @import url(dialog/dialog.css);
+@import url(dialog/__form/dialog__form.css);
+@import url(dialog/__text-input-control/dialog__text-input-control.css);
+@import url(dialog/__field-label/dialog__field-label.css);
+@import url(dialog/__text-input/dialog__text-input.css);
+@import url(dialog/__header/dialog__header.css);
+@import url(dialog/__buttons/dialog__buttons.css);
+@import url(dialog/__button/dialog__button.css);

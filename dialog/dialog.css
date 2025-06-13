@@ -1,7 +1,12 @@
 .dialog {
     flex: 1;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
+    border: 0;
     padding: 2rem;
     box-sizing: border-box;
     width: 100%;
+}
+
+.dialog::backdrop {
+    background-color: #00000062;
 }

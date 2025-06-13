@@ -1,0 +1,20 @@
+.dialog__button {
+    flex: 0 0 120px;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 2px solid #a5a5a5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    background-color: #dddddd;
+    outline: none;
+}
+
+.dialog__button:hover {
+    background-color: #ececec;
+}
+
+.dialog__button:active {
+    background-color: #8f8f8f;
+}
+
