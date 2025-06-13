@@ -1,0 +1,15 @@
+.dialog__select {
+    flex: 1 1 250px;
+    outline: none;
+    border-inline: none;
+    border-top: none;
+    border-color: rgb(158, 158, 158);
+    border-width: 2px;
+    background: none;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.dialog__select:focus {
+    border-color: rgb(0, 0, 40);
+}

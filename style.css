@@ -32,3 +32,5 @@
 @import url(dialog/__header/dialog__header.css);
 @import url(dialog/__buttons/dialog__buttons.css);
 @import url(dialog/__button/dialog__button.css);
+@import url(dialog/__select-control/dialog__select-control.css);
+@import url(dialog/__select/dialog__select.css);

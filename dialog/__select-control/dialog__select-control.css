@@ -1,0 +1,6 @@
+.dialog__select-control {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
