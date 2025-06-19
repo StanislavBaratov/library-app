@@ -16,28 +16,28 @@
             <div class="hero__slogan">Your books are already here!</div>
             <div class="hero__prompt">Select any book below or add the new one</div>
             <div class="hero__buttons">
-                <button type="button" class="hero__button hero__button_color_green">Add book</button>
-                <button type="button" class="hero__button hero__button_color_blue">Random book</button>
+                <button type="button" class="hero__button hero__button_color_green" id="add-book-button">Add book</button>
+                <button type="button" class="hero__button hero__button_color_blue" id="random-book-button">Random book</button>
             </div>
         </div>
         <main class="main">
             <div class="card-canvas"></div>
         </main>
         <footer class="footer">&copy; StanislavBaratov 2025</footer>
-        <dialog class="dialog">
+        <dialog class="dialog" id="add-book-dialog">
             <form method="dialog" class="dialog__form">
                 <div class="dialog__header">New book</div>
                 <div class="dialog__text-input-control">
-                    <label for="" class="dialog__field-label">Author</label>
-                    <input type="text" name="" id="" class="dialog__text-input">
+                    <label for="" class="dialog__field-label" >Author</label>
+                    <input type="text" name="" id="" class="dialog__text-input" placeholder="Ernest Hemmingway">
                 </div>
                 <div class="dialog__text-input-control">
                     <label for="" class="dialog__field-label">Title</label>
-                    <input type="text" name="" id="" class="dialog__text-input">
+                    <input type="text" name="" id="" class="dialog__text-input" placeholder="The Old man and the Sea">
                 </div>
                 <div class="dialog__text-input-control">
                     <label for="" class="dialog__field-label">Genre</label>
-                    <input type="text" name="" id="" class="dialog__text-input">
+                    <input type="text" name="" id="" class="dialog__text-input" placeholder="Adventures">
                 </div>
                 <div class="dialog__select-control">
                     <label for="" class="dialog__field-label">Read</label>
@@ -47,8 +47,8 @@
                     </select>
                 </div>
                 <div class="dialog__buttons">
-                    <button type="button" class="dialog__button">Add book</button>
-                    <button type="button" class="dialog__button">Cancel</button>
+                    <button type="submit" class="dialog__button">Add book</button>
+                    <button type="submit" class="dialog__button">Cancel</button>
                 </div>
             </form>
         </dialog>
