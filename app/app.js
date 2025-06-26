@@ -1,4 +1,5 @@
-import { Card } from '../card/card.js';
+import { Card } from "../card/card.js";
+import { Main } from "../main/main.js";
 
 class Book {
     constructor(title, author, genre, isRead) {
@@ -6,32 +7,42 @@ class Book {
         this.author = author;
         this.genre = genre;
         this.isRead = isRead;
+        this.guid = null;
     }
+
+    generateGUID = () => {
+        this.guid = crypto.randomUUID();
+    } 
 }
 
 class Library {
-    constructor() {
+    constructor(...books) {
         this.books = {};
+        this.addBooks(books);
+    }
+
+    addBooks = (books) => {
+        books.forEach(item => {
+            this.addBook(item);
+        })
     }
 
     addBook = (book) => {
-        const guid = crypto.randomUUID();
-        this.books[guid] = book;
+        book.generateGUID();
+        this.books[book.guid] = book;
     }
 }
 
-class App {
+class LibraryApp {
     constructor() {
         this.library = new Library();
-        this.cardCanvas = document.querySelector('.card-canvas');
-        this.addBooks();
+        this.mainArea = new Main();
     }
 
-    addBooks = () => {
-        const book1 = new Book('The Old man and the Sea', 'Ernest Hemmingway', 'Adventures', 'No');
-        const card1 = new Card(book1);
-        this.cardCanvas.appendChild(card1.control);
+    addBook = (book) => {
+        const card = new Card(book);
+        this.mainArea.appendCard(card);
     }
 }
 
-const app = new App();
+const app = new LibraryApp();

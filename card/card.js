@@ -1,6 +1,12 @@
+import { BaseControl } from '../base-control/base-control.js';
 import { CardTextFieldControl } from './__text-field-control/card__text-field-control.js';
 
-export class Card {
+export class Card extends BaseControl {
+    static controlBEMName = 'card';
+    static containerBEMName = 'card';
+    static hasNoChildren = false;
+    static controlType = 'div';
+    static containerType = null;
     static mapping = {
         'title': 'Title',
         'author': 'Author',
@@ -9,21 +15,16 @@ export class Card {
     };
 
     constructor(book) {
-        this.book = book;
-        this.control = null;
+        super();
         this.createControl();
+
+        this.book = book;
+        this.addFields();
     }
 
-    createControl = () => {
-        this.control = document.createElement('div');
-        this.control.classList.add('card');
-
-        Object.keys(this.book).forEach(key => {
-            if (Object.hasOwn(this.book, key)) {
-                
-                const textFieldControl = new CardTextFieldControl(Card.mapping[key], this.book[key]);
-                this.control.appendChild(textFieldControl.control);
-            }
-        });
+    addFields = () => {
+        Object.keys(this.constructor.mapping).forEach(item => {
+            this.appendChildControl(new CardTextFieldControl(this.constructor.mapping[item], this.book[item]));
+        })
     }
 }

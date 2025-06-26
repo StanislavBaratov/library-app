@@ -1,13 +1,15 @@
-export class CardFieldTitle {
-    constructor(title) {
-        this.title = title;
-        this.control = null;
-        this.createControl();
-    }
+import { BaseControl } from "../../base-control/base-control.js";
 
-    createControl = () => {
-        this.control = document.createElement('div');
-        this.control.classList.add('card__field-title');
-        this.control.textContent = this.title;
+export class CardFieldTitle extends BaseControl {
+    static controlBEMName = 'card__field-title';
+    static containerBEMName = 'card__field-title';
+    static hasNoChildren = true;
+    static controlType = 'div';
+    static containerType = null;
+
+    constructor(textContent) {
+        super();
+        this.textContent = textContent;
+        this.createControl();
     }
 }

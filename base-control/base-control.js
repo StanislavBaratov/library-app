@@ -1,28 +1,30 @@
 export class BaseControl {
     static controlBEMName = 'base-control';
     static containerBEMName = 'base-control__container';
-    static hasContainer = false;
     static hasNoChildren = false;
+    static controlType = 'div';
+    static containerType = 'div';
 
     constructor() {
+        this.guid = crypto.randomUUID();
         this.control = null;
         this.container = null;
         this.parent = null;
         this.children = {};
-        this.childCounter = 0;
+        this.textContent = '';
     }
 
-    createControl = (controlType='div', containerType='div', controlProperties={}) => {
-        console.log('OK');
-
-        this.control = document.createElement(controlType);
-        this.control.classList.add(this.constructor.controlBEMName);
+    createControl = (controlProperties={}) => {
+        this.control = document.createElement(this.constructor.controlType);
         this.setControlProperties(controlProperties);
+        this.control.classList.add(this.constructor.controlBEMName);
+        this.control.textContent = this.textContent;
 
-        if (this.constructor.hasContainer) {
-            this.container = document.createElement(containerType);
+        if (!!this.constructor.containerType) {
+            this.container = document.createElement(this.constructor.containerType);
             this.container.classList.add(this.constructor.containerBEMName);
             this.control.appendChild(this.container);
+
 
         } else {
             this.container = this.control;
@@ -32,7 +34,8 @@ export class BaseControl {
     }
 
     setControlProperties = (properties) => {
-        Object.keys(properties).filter(item => typeof properties[item] !== 'function').forEach(item => {
+        Object.keys(properties).filter(item => typeof properties[item] !== 'function')
+        .forEach(item => {
             if (Object.hasOwn(properties, item)) {
                 this.control.setAttribute(item, properties[item]);
             }
@@ -44,12 +47,12 @@ export class BaseControl {
             throw new Error('This control cannot have any children');  
         }
 
-        const childID = ++this.childCounter;
-        const aChild = this.container.appendChild(child.control);
-        
-        this.children[childID] = aChild;
-        
-        return childID;
+        this.container.appendChild(child.control);
+        this.children[child.guid] = child;
+
+        child.parent = this;
+
+        return child.guid;
     }
 
     removeChildControl = (childID) => {
@@ -58,15 +61,17 @@ export class BaseControl {
             
         }
 
-        this.container.remove(this.children[childID]);
+        this.container.remove(this.children[childID].control);
         this.children[childID] = null;
     }
 
     removeAllChildren = () => {
-        for (let i = 1; i <= this.childCounter; i++) {
-            if (!!this.children[i]) {
-                this.removeChildControl(i);
+        Object.keys(this.children).forEach(item => {
+            if (Object.hasOwn(item) && typeof item !== 'function' && this.children[item] !== null) {
+                this.control.remove(this.children[item].control);
             }
-        }
+        });
+
+        this.children = {};
     }
 }
